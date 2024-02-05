@@ -5,11 +5,14 @@
 
     <Grid>
         <Grid.GestureRecognizers>
-            <SwipeGestureRecognizer Threshold="400"
-                                    Direction="Down"
-                                    Swiped="SwipeGestureRecognizer_Swiped" />
+            <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
         </Grid.GestureRecognizers>
-        <Label Text="Swipe down" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="Swipe down" />
+        <Label Grid.Row="1" x:Name="scrollPosition"  />
     </Grid>
 
 </ContentPage>
